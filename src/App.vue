@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <button @click="showList =! showList"> show list</button>
+    <button @click="showList =! showList"> toggle list</button>
     <transition name='fade'>
-      <todo-list v-if="showList">
+      <todo-list v-if="showList" :todoList="todoList">
       </todo-list>
     </transition>
   </div>
@@ -14,7 +14,12 @@ export default {
   data () {
     return {
       msg: ' to Your Vue.js App',
-      showList: true
+      showList: true,
+      todoList:[
+        { text: 'text 1' , done: false},
+        { text: 'text 2' , done: false},
+        { text: 'text 3' , done: false}
+      ]
     }
   },
   components:{
