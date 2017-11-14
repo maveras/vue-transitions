@@ -1,9 +1,11 @@
 <template>
   <div class="todo-list-container">
     <ul class="todo-list">
-      <li class="todo-list__item" v-for="todo in todoList">
-        {{todo.text}}
-      </li>
+      <transition-group name="slide">
+        <li class="todo-list__item" v-for="todo in todoList" :key="todo.text" v-if="!todo.done">
+          {{todo.text}} <button @click="doneTask(todo)"> done </button>
+        </li>
+      </transition-group>
     </ul>
   </div>
 </template>
@@ -12,6 +14,11 @@
     data () {
       return {
         msg: 'asdas'
+      }
+    },
+    methods: {
+      doneTask (todo) {
+        todo.done = true
       }
     },
     props: ['todoList']
@@ -27,7 +34,18 @@
     border: 1px solid red;
   }
 
-  .todo-list__item-hide {
-    height: 0px;
+  /* Enter and leave animations can use different */
+  /* durations and timing functions.              */
+  .slide-enter-active {
+    transition: all .3s ease;
   }
+  .slide-leave-active {
+    transition: all .3s ease;
+  }
+  .slide-enter, .slide-leave-to
+  {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
 </style>
