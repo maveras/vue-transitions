@@ -1,6 +1,8 @@
 <template>
   <div id="app">
+    <leftCompo :menuToggled="menuToggled"></leftCompo>
     <button @click="showList =! showList"> toggle list</button>
+    <button @click="menuToggled  =! menuToggled">toggle menu</button>
     <transition name='fade'>
       <todo-list v-if="showList" :todoList="todoList">
       </todo-list>
@@ -9,12 +11,14 @@
 </template>
 <script>
 import todoList from './components/todoList.vue'
+import leftCompo from './components/leftCompo.vue'
 export default {
   name: 'app',
   data () {
     return {
       msg: ' to Your Vue.js App',
       showList: true,
+      menuToggled : false,
       todoList:[
         { text: 'text 1' , done: false},
         { text: 'text 2' , done: false},
@@ -22,8 +26,14 @@ export default {
       ]
     }
   },
+  methods: {
+    toggleMenu () {
+      this.menuToggled != this.menuToggled
+    }
+  },
   components:{
-    todoList
+    todoList,
+    leftCompo
   }
 }
 </script>
@@ -36,5 +46,4 @@ export default {
       opacity: 0
     }
 
-    
 </style>
