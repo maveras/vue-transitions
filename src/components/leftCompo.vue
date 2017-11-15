@@ -27,7 +27,7 @@
     vertical-align: top;
     padding: .5rem;
     transform: translateX(-281px);
-    transition: all 0.3s ease
+    transition: all 0.2s ease
   }
 
   .list-item {
