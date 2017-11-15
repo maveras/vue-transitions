@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <h1>edit Comp</h1>
+  <div class="component-container">
+    <h1>edit Comp</h1> 
   </div>
 </template>
 <script>
   
 </script>
 <style>
-  
+  .component-container {
+    border: 1px solid red;
+  }
 </style>

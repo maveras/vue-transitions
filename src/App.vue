@@ -14,8 +14,8 @@
       <button @click="compMounted = 'showCompo'"> show</button>
     </div>
     <div class="compo-container">
-      <transition>
-        <component :is="compMounted" name="drag"></component>
+      <transition name="drag">
+        <component :is="compMounted" ></component>
       </transition>
     </div>
   </div>
@@ -73,14 +73,15 @@ export default {
     }
 
     .drag-enter-active {
-      transition: all .3s ease;
+      transition: all .5s ease;
     }
     .drag-leave-active {
-      transition: all .3s ease;
+      transition: all .5s ease;
     }
     .drag-enter, .drag-leave-to
     {
-      transform: translateY(200px);
+      transform: translateX(20px);
       opacity: 0;
+      height: 0px;
     }
 </style>
