@@ -26,7 +26,7 @@
     display: inline-block;
     vertical-align: top;
     padding: .5rem;
-    transform: translateX(-100px);
+    transform: translateX(-281px);
     transition: all 0.3s ease
   }
 
@@ -36,6 +36,6 @@
   }
 
   .menu--toggled {
-    transform: translateX(150px);
+    transform: translateX(0px);
   }
 </style>
